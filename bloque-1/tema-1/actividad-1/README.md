@@ -1,6 +1,7 @@
 # Actividad 1 — "La Cocina Boloñesa": Simulación de una receta en Java
 
-Fecha límite de entrega: Domingo 11/10/2026 a las 23:59
+- *Fecha límite de entrega*: Domingo 11/10/2026 a las 23:59
+- *RA 1*: Desenvolupa aplicacions compostes per diversos processos reconeixent i aplicant principis de programació paral·lela.
 
 ## Contexto
 

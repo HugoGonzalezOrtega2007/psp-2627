@@ -24,7 +24,7 @@ La estructura es la siguiente:
 
 ``` shell
 /bloque-1 # Procesos e hilos
-  /tema-1 # RA 1 + RA 2
+  /tema-1
     /apuntes/
       # también puedes encontrarlos en el aula virtual
     /actividad-1/

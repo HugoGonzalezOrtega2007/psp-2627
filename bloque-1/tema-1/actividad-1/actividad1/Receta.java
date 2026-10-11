@@ -27,11 +27,19 @@ public class Receta {
     }
 
     public void ejecutar(Cocinero cocinero) {
-        System.out.println("Preparando: " + nombre);
+        System.out.println("=== PREPARANDO: " + nombre + " ===\n");
+        long inicio = System.currentTimeMillis();
+
         for (int i = 0; i < pasos.size(); i++) {
-            PasoReceta paso = pasos.get(i);
-            cocinero.ejecutarPaso(paso);
+            cocinero.ejecutarPaso(pasos.get(i));
         }
-        System.out.println("Receta terminada: " + nombre);
+
+        for (int i = 0; i < pasos.size(); i++) {
+            pasos.get(i).getRecipiente().setEstado("TERMINADO");
+        }
+
+        long fin = System.currentTimeMillis();
+        System.out.println("=== RECETA TERMINADA: " + nombre + " ===");
+        System.out.println("TIEMPO TOTAL: " + (fin - inicio) / 1000.0 + " s");
     }
 }

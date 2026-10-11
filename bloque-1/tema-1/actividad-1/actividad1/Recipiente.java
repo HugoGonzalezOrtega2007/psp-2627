@@ -1,5 +1,6 @@
 package actividad1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Recipiente {
@@ -8,9 +9,9 @@ public class Recipiente {
     private String estado;
     private List<Ingrediente> ingredientes;
 
-    public Recipiente( String nombre) {
+    public Recipiente(String nombre) {
         this.estado = "vacio";
-        this.ingredientes = 0;
+        this.ingredientes = new ArrayList<>();
         this.nombre = nombre;
     }
 
@@ -28,9 +29,6 @@ public class Recipiente {
     public List<Ingrediente> getIngredientes() {
         return ingredientes;
     }
-    public void setIngredientes(List<Ingrediente> ingredientes) {
-        this.ingredientes = ingredientes;
-    }
 
     public String getNombre() {
         return nombre;
@@ -39,9 +37,8 @@ public class Recipiente {
         this.nombre = nombre;
     }
 
-
     @Override
     public String toString() {
-        return nombre + " [" + estado + "] contiene: " + ingredientes;
+        return nombre + " " + estado + " contiene: " + ingredientes;
     }
 }

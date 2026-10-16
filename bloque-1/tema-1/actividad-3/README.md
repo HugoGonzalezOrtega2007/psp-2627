@@ -18,15 +18,15 @@ Vas a simular el **aforo** de una sala: varias personas entran muchas veces y to
 
 Como mínimo:
 
-1. **`Aforo`** (o `Contador`)
+1. **`Contador`** (o `Contador`)
    - Variable compartida (por ejemplo `int entradas`).
    - Método `entrar()` que suma 1.
    - Método `getTotal()`.
 2. **`Visitante`** (implementa `Runnable`)
-   - Recibe el `Aforo` compartido.
+   - Recibe el `Contador` compartido.
    - En `run()`, llama a `entrar()` un número fijo de veces (p. ej. 1000).
 3. **`Main`**
-   - Crea **4** visitantes (hilos) sobre el mismo `Aforo`.
+   - Crea **4** visitantes (hilos) sobre el mismo `Contador`.
    - Cada uno hace 1000 entradas → total esperado: **4000**.
    - Arranca, hace `join`, imprime el total.
 

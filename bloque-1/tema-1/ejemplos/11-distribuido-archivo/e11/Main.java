@@ -19,13 +19,17 @@ public class Main {
 
         for (int numero = 1; numero <= Canal.TAREAS; numero++) {
             String orden = "ejecuta tarea " + numero;
+
             Canal.escribir(orden);
+
             System.out.println("[main] digo: " + orden);
 
             String respuesta = esperar("tarea " + numero + " completa");
             System.out.println("[main] leo: tarea " + numero + " completa");
+
             long resultado = parseResultado(respuesta);
             resultados[numero - 1] = resultado;
+
             System.out.println("[main] guardo tarea " + numero + " -> " + resultado);
 
             System.out.println("[main] espero antes de contestar");

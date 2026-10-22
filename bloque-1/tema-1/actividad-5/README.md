@@ -38,7 +38,7 @@ En los dos, el resultado final tiene que ser **800**.
 
 ## Entregable
 
-- `Secuencial` y `Paralelo` en `actividad-5/actividad5/` (package `actividad5`). Junto al enunciado. Sin carpeta `/solución`.
+- `Secuencial` y `Paralelo` en `actividad-5/actividad5/` (package `actividad5`). Junto al enunciado.
 - Un log de cada programa con el total **800** y el tiempo.
 
 ## Criterios de evaluación orientativos

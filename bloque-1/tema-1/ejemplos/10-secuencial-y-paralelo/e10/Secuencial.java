@@ -16,6 +16,7 @@ public class Secuencial {
         System.out.println("---");
 
         long inicio = System.nanoTime();
+
         for (int numero = 1; numero <= Tarea.TOTAL; numero++) {
             resultados[numero - 1] = Tarea.ejecutar(numero);
             if (numero % 100 == 0) {

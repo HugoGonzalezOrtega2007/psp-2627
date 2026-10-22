@@ -13,17 +13,22 @@ public class Trabajador {
 
         while (true) {
             Mensaje mensaje = Canal.recibir();
+
             if (mensaje != null && mensaje.esFin()) {
                 System.out.println("[trabajador] leo: fin. cierro.");
                 return;
             }
+
             if (mensaje != null && mensaje.esEjecuta()) {
                 int numero = mensaje.tarea;
+
                 System.out.println("[trabajador] leo: ejecuta tarea " + numero);
                 System.out.println("[trabajador] estoy trabajando");
+
                 Canal.enviar(Mensaje.trabajando(numero));
                 long resultado = ejecutar(numero);
                 Canal.enviar(Mensaje.completa(numero, resultado));
+
                 System.out.println("[trabajador] digo: tarea " + numero + " completa, resultado=" + resultado);
             }
             Thread.sleep(Canal.PAUSA_MS);

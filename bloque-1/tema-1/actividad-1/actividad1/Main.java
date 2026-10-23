@@ -1,48 +1,52 @@
 package actividad1;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Cocinero cocinero = new Cocinero("Josue");
 
-        Container pot = new Container("la olla");
-        Container pan = new Container("la sarten");
+        Recipiente olla = new Recipiente("olla");
+        Recipiente sarten = new Recipiente("sartén");
+        Recipiente colador = new Recipiente("colador");
+        Recipiente plato = new Recipiente("plato");
 
-        Ingredient water = new Ingredient("agua", 1, "L");
-        Ingredient salt = new Ingredient("sal", 10, "mg");
-        Ingredient spaguetis = new Ingredient("espaguetis", 1, "kg");
-        Ingredient onion = new Ingredient("cebolla", 1, "u");
-        Ingredient garlic = new Ingredient("ajo", 4, "u");
-        Ingredient meet = new Ingredient("carne", 500, "g");
-        Ingredient tomato = new Ingredient("tomate", 350, "g");
+        Ingrediente agua = new Ingrediente(2, "agua", "L");
+        Ingrediente sal = new Ingrediente(5, "sal", "g");
+        Ingrediente espaguetis = new Ingrediente(100, "espaguetis", "g");
+        Ingrediente aceite = new Ingrediente(20, "aceite", "ml");
+        Ingrediente cebolla = new Ingrediente(1, "cebolla", "unidad");
+        Ingrediente ajo = new Ingrediente(2, "ajo", "dientes");
+        Ingrediente carne = new Ingrediente(200, "carne picada", "g");
+        Ingrediente tomate = new Ingrediente(400, "tomate", "g");
 
-        ReceiptStep step1 = new ReceiptStep(
-                "Poner agua a hervir en la olla",
-                pot,
-                Arrays.asList(water, salt)
-        );
-        ReceiptStep step2 = new ReceiptStep(
-                "Cocer los espaguetis en la olla",
-                pot,
-                List.of(spaguetis)
-        );
-        ReceiptStep step3 = new ReceiptStep(
-                "Sofreir la cebolla y el ajo en la sartén con aceite",
-                pan,
-                Arrays.asList(onion, garlic)
-        );
+        List<Ingrediente> ingAgua = new ArrayList<>();
+        ingAgua.add(agua);
+        ingAgua.add(sal);
+        List<Ingrediente> ingPasta = new ArrayList<>();
+        ingPasta.add(espaguetis);
+        List<Ingrediente> ingSofrito = new ArrayList<>();
+        ingSofrito.add(cebolla);
+        ingSofrito.add(ajo);
+        ingSofrito.add(aceite);
+        List<Ingrediente> ingCarne = new ArrayList<>();
+        ingCarne.add(carne);
+        List<Ingrediente> ingTomate = new ArrayList<>();
+        ingTomate.add(tomate);
+        List<Ingrediente> ninguno = new ArrayList<>();
+        List<PasoReceta> pasos = new ArrayList<>();
 
-        Receipt receipt = new Receipt(
-                "Espaguetis a la boloñesa",
-                Arrays.asList(
-                        step1,
-                        step2,
-                        step3
-                )
-        );
+        pasos.add(new PasoReceta("Poner agua a hervir en la olla", 3, ingAgua, olla));
+        pasos.add(new PasoReceta("Cocer los espaguetis en la olla", 5, ingPasta, olla));
+        pasos.add(new PasoReceta("Sofreír la cebolla y el ajo con aceite", 4, ingSofrito, sarten));
+        pasos.add(new PasoReceta("Añadir la carne picada y dorarla", 6, ingCarne, sarten));
+        pasos.add(new PasoReceta("Añadir el tomate y dejar reducir la salsa", 7, ingTomate, sarten));
+        pasos.add(new PasoReceta("Escurrir la pasta", 2, ninguno, colador));
+        pasos.add(new PasoReceta("Mezclar la pasta con la salsa boloñesa", 3, ninguno, sarten));
+        pasos.add(new PasoReceta("Emplatar", 1, ninguno, plato));
 
-        receipt.preparar(cocinero);
+        Receta receta = new Receta("Espaguetis a la boloñesa", pasos);
+        Cocinero cocinero = new Cocinero("Pepe");
+        receta.ejecutar(cocinero);
     }
 }

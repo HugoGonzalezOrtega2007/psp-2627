@@ -1,4 +1,4 @@
-package Sincronizacion;
+package actividad3.Sincronizacion;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

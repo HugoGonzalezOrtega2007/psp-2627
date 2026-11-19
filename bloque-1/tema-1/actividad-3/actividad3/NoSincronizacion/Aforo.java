@@ -1,4 +1,4 @@
-package NoSincronizacion;
+package actividad3.NoSincronizacion;
 
 public class Aforo {
     private int valor = 0;

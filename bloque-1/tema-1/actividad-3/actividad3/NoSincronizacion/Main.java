@@ -1,6 +1,4 @@
-package NoSincronizacion;
-
-import e02.Incrementador;
+package actividad3.NoSincronizacion;
 
 public class Main {
 

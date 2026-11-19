@@ -1,6 +1,4 @@
-package NoSincronizacion;
-
-import e02.Contador;
+package actividad3.NoSincronizacion;
 
 public class Visitante implements Runnable{
     private Aforo aforo;

@@ -1,4 +1,4 @@
-package Sincronizacion;
+package actividad3.Sincronizacion;
 
 public class Main {
 
